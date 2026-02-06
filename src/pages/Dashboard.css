@@ -1,0 +1,90 @@
+.dashboard {
+  padding: 40px 0;
+}
+
+.dashboard h1 {
+  color: #007bff;
+  margin-bottom: 32px;
+  font-size: 36px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.dashboard-card {
+  background: white;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+}
+
+.dashboard-card h3 {
+  color: #333;
+  margin-bottom: 16px;
+  font-size: 18px;
+}
+
+.card-number {
+  font-size: 48px;
+  font-weight: 700;
+  color: #007bff;
+  margin-bottom: 8px;
+}
+
+.card-subtitle {
+  color: #666;
+  font-size: 14px;
+}
+
+.recent-section {
+  background: white;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.recent-section h2 {
+  color: #333;
+  margin-bottom: 24px;
+  font-size: 24px;
+}
+
+.activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.activity-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.activity-icon {
+  font-size: 32px;
+}
+
+.activity-content h4 {
+  color: #333;
+  margin-bottom: 6px;
+  font-size: 16px;
+}
+
+.activity-content p {
+  color: #666;
+  font-size: 14px;
+}
