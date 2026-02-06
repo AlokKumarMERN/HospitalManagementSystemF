@@ -12,6 +12,8 @@ const PatientDashboard = () => {
   });
   const [recentAppointments, setRecentAppointments] = useState([]);
   const [recentActivity, setRecentActivity] = useState([]);
+  const [allActivities, setAllActivities] = useState([]);
+  const [showAllActivities, setShowAllActivities] = useState(false);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -62,10 +64,10 @@ const PatientDashboard = () => {
       ];
       
       const sortedActivities = activities
-        .sort((a, b) => new Date(b.date) - new Date(a.date))
-        .slice(0, 10);
+        .sort((a, b) => new Date(b.date) - new Date(a.date));
       
-      setRecentActivity(sortedActivities);
+      setAllActivities(sortedActivities);
+      setRecentActivity(sortedActivities.slice(0, 5));
       setLoading(false);
     } catch (error) {
       console.error('Error fetching dashboard data:', error);
@@ -80,6 +82,10 @@ const PatientDashboard = () => {
 
   const formatTime = (timeString) => {
     return timeString;
+  };
+
+  const toggleShowAllActivities = () => {
+    setShowAllActivities(!showAllActivities);
   };
 
   const getStatusBadge = (status) => {
@@ -229,10 +235,15 @@ const PatientDashboard = () => {
         <div className="dashboard-section">
           <div className="section-header">
             <h2>Recent Activity</h2>
+            {allActivities.length > 5 && (
+              <button onClick={toggleShowAllActivities} className="view-all">
+                {showAllActivities ? 'Show Less' : 'View All →'}
+              </button>
+            )}
           </div>
-          {recentActivity.length > 0 ? (
+          {(showAllActivities ? allActivities : recentActivity).length > 0 ? (
             <div className="activity-list">
-              {recentActivity.map((activity, index) => (
+              {(showAllActivities ? allActivities : recentActivity).map((activity, index) => (
                 <div key={index} className="activity-item">
                   <div className="activity-icon">
                     {activity.type === 'appointment' && <img src="https://cdn-icons-png.flaticon.com/512/2693/2693507.png" alt="Appointment" />}

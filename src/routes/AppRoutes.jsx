@@ -11,6 +11,7 @@ import Prescriptions from '../pages/Prescriptions';
 import MedicalRecords from '../pages/MedicalRecords';
 import TestResults from '../pages/TestResults';
 import Dashboard from '../pages/Dashboard';
+import ResetPassword from '../components/auth/ResetPassword';
 
 const PrivateRoute = ({ children }) => {
   const { user } = useAuth();
@@ -23,6 +24,7 @@ const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/auth" element={<Auth />} />
+      <Route path="/reset-password/:resetToken" element={<ResetPassword />} />
       <Route
         path="/"
         element={user ? <Navigate to="/dashboard" replace /> : <Navigate to="/auth" replace />}
