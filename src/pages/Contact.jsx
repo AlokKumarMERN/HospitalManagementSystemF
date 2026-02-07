@@ -14,23 +14,23 @@ const Contact = () => {
               <div className="contact-info">
                 <div className="info-item">
                   <h3>Address</h3>
-                  <p>123 Healthcare Avenue, Medical District</p>
-                  <p>City, State 12345</p>
+                  <p>SaveLife Hospital</p>
+                  <p>Gopalganj, Barauli, 841405</p>
                 </div>
                 <div className="info-item">
                   <h3>Phone</h3>
-                  <p>Emergency: +1 (555) 911-911</p>
-                  <p>General: +1 (555) 123-4567</p>
+                  <p>Emergency: +91 10009 38001</p>
+                  <p>General: +91 56782 45678 </p>
                 </div>
                 <div className="info-item">
                   <h3>Email</h3>
-                  <p>info@savelife.com</p>
+                  <p>alokgupta742001@gmail.com</p>
                   <p>support@savelife.com</p>
                 </div>
                 <div className="info-item">
                   <h3>Hours</h3>
                   <p>Emergency: 24/7</p>
-                  <p>OPD: 9:00 AM - 6:00 PM</p>
+                  <p>OPD: 9:00 AM - 11:00 PM</p>
                 </div>
               </div>
             </div>

@@ -1,8 +1,21 @@
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 import Header from '../components/layout/Header';
 import Footer from '../components/layout/Footer';
 import './Home.css';
 
 const Home = () => {
+  const navigate = useNavigate();
+  const { user } = useAuth();
+
+  const handleBookAppointment = () => {
+    if (user) {
+      navigate('/appointment');
+    } else {
+      navigate('/auth');
+    }
+  };
+
   const healthyFoods = [
     {
       name: 'Fresh Fruits',
@@ -211,9 +224,14 @@ const Home = () => {
             <div className="cta-content">
               <h2>Ready to Take Control of Your Health?</h2>
               <p>Schedule your appointment today and start your journey to better health</p>
-              <button className="cta-button" onClick={() => window.location.href = '/appointment'}>
+              <button className="cta-button" onClick={handleBookAppointment}>
                 Book Appointment Now
               </button>
+              {!user && (
+                <p className="cta-note">
+                  <small>You'll need to login or create an account to book an appointment</small>
+                </p>
+              )}
             </div>
           </div>
         </div>

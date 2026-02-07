@@ -427,6 +427,21 @@
   background: #f8f9fa;
 }
 
+.cta-note {
+  margin-top: 20px;
+  font-size: 16px;
+  opacity: 0.85;
+  font-style: italic;
+}
+
+.cta-note small {
+  display: inline-block;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
 /* Animations */
 @keyframes fadeInUp {
   from {

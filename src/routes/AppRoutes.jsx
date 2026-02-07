@@ -23,49 +23,21 @@ const AppRoutes = () => {
 
   return (
     <Routes>
-      <Route path="/auth" element={<Auth />} />
+      {/* Public Routes */}
+      <Route path="/auth" element={user ? <Navigate to="/dashboard" replace /> : <Auth />} />
       <Route path="/reset-password/:resetToken" element={<ResetPassword />} />
-      <Route
-        path="/"
-        element={user ? <Navigate to="/dashboard" replace /> : <Navigate to="/auth" replace />}
-      />
+      <Route path="/" element={<Home />} />
+      <Route path="/home" element={<Home />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/services" element={<Services />} />
+      <Route path="/blogs" element={<Blogs />} />
+
+      {/* Protected Routes - Require Login */}
       <Route
         path="/dashboard"
         element={
           <PrivateRoute>
             <Dashboard />
-          </PrivateRoute>
-        }
-      />
-      <Route
-        path="/home"
-        element={
-          <PrivateRoute>
-            <Home />
-          </PrivateRoute>
-        }
-      />
-      <Route
-        path="/contact"
-        element={
-          <PrivateRoute>
-            <Contact />
-          </PrivateRoute>
-        }
-      />
-      <Route
-        path="/services"
-        element={
-          <PrivateRoute>
-            <Services />
-          </PrivateRoute>
-        }
-      />
-      <Route
-        path="/blogs"
-        element={
-          <PrivateRoute>
-            <Blogs />
           </PrivateRoute>
         }
       />
