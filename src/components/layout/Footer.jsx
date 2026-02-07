@@ -57,19 +57,19 @@ const Footer = () => {
                 <span className="icon">
                   <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Location" />
                 </span>
-                <span>123 Healthcare Avenue<br/>Medical District, City 12345</span>
+                <span>SaveLife Hospital<br/>Gopalganj, Barauli 841405</span>
               </li>
               <li>
                 <span className="icon">
                   <img src="https://cdn-icons-png.flaticon.com/512/597/597177.png" alt="Phone" />
                 </span>
-                <span>Emergency: +1 (555) 911-911<br/>General: +1 (555) 123-4567</span>
+                <span>Emergency: +91 9876543210<br/>General: +91 9876543210</span>
               </li>
               <li>
                 <span className="icon">
                   <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" />
                 </span>
-                <span>info@savelife.com</span>
+                <span>alokgupta742001@gmail.com</span>
               </li>
             </ul>
           </div>
